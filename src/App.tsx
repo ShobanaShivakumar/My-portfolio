@@ -3,7 +3,7 @@ import { Toaster } from "@/components/ui/toaster";            // Notification sy
 import { Toaster as Sonner } from "@/components/ui/sonner";   // Optional toast alternative
 import { TooltipProvider } from "@/components/ui/tooltip";    // Tooltip support
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 // Pages
 import Index from "./pages/Index";
@@ -28,30 +28,28 @@ const App = () => (
     <TooltipProvider>
       <Toaster /> {/* Primary toast */}
       <Sonner />  {/* Optional toast alternative */}
-      <BrowserRouter>
-        <div className="bg-black min-h-screen overflow-hidden relative flex flex-col">
-          
-          <Navigation />
+      <div className="bg-black min-h-screen overflow-hidden relative flex flex-col">
+        
+        <Navigation />
 
-          <div className="flex-grow"> {/* This ensures footer stays at bottom */}
-            <PageTransition>
-              <Routes>
-                <Route path="/" element={<Index />} />
-                <Route path="/about" element={<About />} />
-                <Route path="/cta" element={<CallToAction />} />
-                <Route path="/resume" element={<Resume />} />
-                <Route path="/projects" element={<Projects />} />
-                <Route path="/skills" element={<Skills />} />
-                <Route path="/contact" element={<Contact />} />
-                <Route path="/profiles" element={<CodingProfiles />} />
-                <Route path="*" element={<NotFound />} />
-              </Routes>
-            </PageTransition>
-          </div>
-
-          <Footer /> {/* ✅ Consistent site footer */}
+        <div className="flex-grow"> {/* Ensures footer sticks to bottom */}
+          <PageTransition>
+            <Routes>
+              <Route path="/" element={<Index />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/cta" element={<CallToAction />} />
+              <Route path="/resume" element={<Resume />} />
+              <Route path="/projects" element={<Projects />} />
+              <Route path="/skills" element={<Skills />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/profiles" element={<CodingProfiles />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </PageTransition>
         </div>
-      </BrowserRouter>
+
+        <Footer /> {/* Consistent site footer */}
+      </div>
     </TooltipProvider>
   </QueryClientProvider>
 );
