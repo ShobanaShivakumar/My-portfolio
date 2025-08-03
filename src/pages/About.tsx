@@ -94,10 +94,11 @@ const About = () => {
             <div className="relative glass-effect p-8 rounded-2xl text-center">
               <div className="w-32 h-32 sm:w-40 sm:h-40 mx-auto mb-6 rounded-full overflow-hidden border-4 border-purple-500 shadow-lg transition-transform duration-300 hover:scale-105">
                 <img
-                 src={`${import.meta.env.BASE_URL}Shobanaimage.jpg`}
-                 alt="Shobana Profile"
+                 src="/My-portfolio/Shobanaimage.jpg"
+                 alt="Shobana"
                  className="rounded-xl w-[280px] h-[300px] object-cover"
                  />
+
 
               </div>
               <h3 className="text-2xl font-bold mb-2">Tech Enthusiast & Creative Developer</h3>
