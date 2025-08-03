@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Award, Code, BookOpen, Coffee } from 'lucide-react';
+import { Award, Code, BookOpen } from 'lucide-react';
 import ParticleBackground from '../components/ParticleBackground';
 
 const About = () => {
@@ -25,11 +25,10 @@ const About = () => {
 
   const achievements = [
     { icon: Code, title: "10+ Projects", description: "Built using React, Node.js, etc." },
-    { icon: BookOpen, title: "B.Tech IT Student", description: "Madras Institute of Technology,Anna University" },
+    { icon: BookOpen, title: "B.Tech IT Student", description: "Madras Institute of Technology, Anna University" },
     { icon: Award, title: "Naan Mudhalvan Learner", description: "Skilled in Full-Stack Tools" },
-
   ];
-   
+
   return (
     <div className="min-h-screen pt-20 relative overflow-hidden">
       <ParticleBackground />
@@ -44,6 +43,7 @@ const About = () => {
         animate="visible"
         className="container mx-auto px-6 py-12 relative z-10"
       >
+        {/* Header */}
         <motion.div
           variants={itemVariants}
           transition={{ duration: 0.8 }}
@@ -94,7 +94,7 @@ const About = () => {
             <div className="relative glass-effect p-8 rounded-2xl text-center">
               <div className="w-32 h-32 sm:w-40 sm:h-40 mx-auto mb-6 rounded-full overflow-hidden border-4 border-purple-500 shadow-lg transition-transform duration-300 hover:scale-105">
                 <img
-                  src="/Shobana image.jpg"
+                  src={`${import.meta.env.BASE_URL}ShobanaImage.jpg`}
                   alt="Shobana"
                   className="w-full h-full object-cover"
                 />
@@ -104,7 +104,7 @@ const About = () => {
 
               {/* Resume Button */}
               <a
-                href="/Shobana_S_Resume.pdf"
+                href={`${import.meta.env.BASE_URL}Shobana_S_Resume.pdf`}
                 download
                 className="inline-block mt-4 px-6 py-2 bg-gradient-to-r from-purple-600 to-blue-500 rounded-full text-white font-semibold hover:scale-105 transition-transform duration-300 glow-effect"
               >
@@ -118,7 +118,7 @@ const About = () => {
         <motion.div
           variants={itemVariants}
           transition={{ duration: 0.8 }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-6 "
+          className="grid grid-cols-2 md:grid-cols-4 gap-6"
         >
           {achievements.map((achievement, index) => {
             const Icon = achievement.icon;
@@ -127,7 +127,7 @@ const About = () => {
                 key={index}
                 whileHover={{ scale: 1.05, y: -5 }}
                 whileTap={{ scale: 0.95 }}
-                className="center glass-effect p-6 rounded-xl text-center group hover:glow-effect transition-all duration-300 "
+                className="center glass-effect p-6 rounded-xl text-center group hover:glow-effect transition-all duration-300"
               >
                 <motion.div
                   whileHover={{ rotate: 360 }}
