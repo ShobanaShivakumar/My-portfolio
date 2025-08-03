@@ -95,7 +95,7 @@ const About = () => {
               <div className="w-32 h-32 sm:w-40 sm:h-40 mx-auto mb-6 rounded-full overflow-hidden border-4 border-purple-500 shadow-lg transition-transform duration-300 hover:scale-105">
                 <img
                   src={`${import.meta.env.BASE_URL}Shobanaimage.jpg`}
-                  alt="Shobana"
+                  alt="Shobanaimage"
                   className="w-full h-full object-cover"
                 />
               </div>
